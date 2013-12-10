@@ -480,8 +480,8 @@ class WrightFisher(object):
     def _plot_results(self, avg_signals_sent, avg_costs, avg_accepted, t, show_signals_graph=False):
         colors = GRAPH_COLORS
         x_axis = range(t)
-        if show_signals_graph:
-            plt.figure(1)
+        plt.figure(1, figsize=(12, 8), dpi=80, facecolor='w', edgecolor='k')
+	if show_signals_graph:
             plt.subplot(211)
         for sender_type_idx in xrange(self.n_types_of_senders):
             plt.plot(x_axis, avg_costs[: t, sender_type_idx], colors[sender_type_idx], label='S_%d' % sender_type_idx)
